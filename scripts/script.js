@@ -20,14 +20,15 @@ const displayCard = async (cardId) => {
 
     let res = await fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php?id=" + cardId + "&misc=yes")
     let json = await res.json()
+    let cardImg = document.getElementById("cardImg")
     let data
 
     if (json['error']) {
-        document.getElementById("cardImg").src = "./images/notfound.jpg"
+        document.getElementById("cardImg").style.backgroundImage = "url('./images/notfound.jpg')";
     }
     else {
         data = json['data'][0]
-        document.getElementById("cardImg").src = data["card_images"][0]['image_url']
+        cardImg.style.backgroundImage = "url('" + data["card_images"][0]['image_url'] + "')";
         document.getElementsByClassName("boxBottom")[0].innerHTML = data["desc"]
     }
 
@@ -51,8 +52,7 @@ const displayCard = async (cardId) => {
                     break
     
                 default :
-                    
-                    boxDetailRight.innerHTML = data[detail]
+                    boxDetailRight.innerHTML = (data[detail] ? data[detail] : "-")
             }
         }
         let boxDetailLeft = document.createElement("div")
