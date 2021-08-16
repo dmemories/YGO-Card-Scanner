@@ -36,8 +36,7 @@
     width: 305px;
     height: 440px;
     background-color: #000000;
-    background-image: url('../images/notfound.jpg');
-   
+    background-image: url('../images/empty.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -52,7 +51,6 @@
     animation: holoCard 15s ease infinite;
     transform-origin: center;
     z-index: 10;
- 
     transform: translate3d(0, 0, -1px);
   }
   

@@ -31,9 +31,28 @@ const displayCard = async (cardId) => {
         cardImg.style.backgroundImage = "url('" + data["card_images"][0]['image_url'] + "')";
         document.getElementsByClassName("boxBottom")[0].innerHTML = data["desc"]
     }
+    
+    // Holo Effect by Card Type
+    if (data['type'].toLowerCase().indexOf("spell") > -1) {
+        cardImg.style.setProperty('--color1', 'rgb(76, 230, 97)');
+        cardImg.style.setProperty('--color2', 'rgb(145, 240, 158)');
+    }
+    else if (data['type'].toLowerCase().indexOf("trap") > -1) {
+        cardImg.style.setProperty('--color1', 'rgb(199, 15, 107)');
+        cardImg.style.setProperty('--color2', 'rgb(255, 90, 144)');
+    }
+    else if (data['type'].toLowerCase().indexOf("normal") > -1) {
+        cardImg.style.setProperty('--color1', 'rgb(233, 165, 88)');
+        cardImg.style.setProperty('--color2', 'rgb(255, 212, 147)');
+    }
+    else {
+        cardImg.style.setProperty('--color1', 'rgb(0, 231, 255)');
+        cardImg.style.setProperty('--color2', 'rgb(255, 0, 231)');
+    }
 
-    let ele = document.getElementsByClassName("boxRight")[0]
-    ele.innerHTML = ""
+    // Card Detail
+    let boxRight = document.getElementsByClassName("boxRight")[0]
+    boxRight.innerHTML = ""
     detailArr.forEach(detail => {
         let boxDetail = document.createElement("div")
         boxDetail.classList.add("boxDetail")
@@ -62,13 +81,9 @@ const displayCard = async (cardId) => {
 
         boxDetail.appendChild(boxDetailLeft)
         boxDetail.appendChild(boxDetailRight)
-        ele.appendChild(boxDetail)
+        boxRight.appendChild(boxDetail)
     })
 }
-
-(async () => {
-
-})()
 
 var searching = false
 var searchEle = document.getElementById("searchId")
