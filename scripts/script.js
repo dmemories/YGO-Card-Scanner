@@ -1,3 +1,5 @@
+var playingAudio = false
+
 const delay = (time) => {
     return new Promise((succ, fail) => {
         setTimeout(succ, time)
@@ -83,6 +85,13 @@ const displayCard = async (cardId) => {
         boxDetail.appendChild(boxDetailRight)
         boxRight.appendChild(boxDetail)
     })
+    if (playingAudio === false) {
+        playingAudio = true
+        let audio = new Audio('sounds/bg.mp3')
+        audio.play()
+        audio.loop = true
+        audio.volume = 0.2
+    }
 }
 
 var searching = false

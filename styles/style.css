@@ -87,3 +87,14 @@ body {
     border-bottom-right-radius: 10px;
     letter-spacing: 0.6px;
 }
+
+.boxFooter {
+    max-width: 800px;
+    width: 85%;
+    height: 30px;
+    margin: 0 auto;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

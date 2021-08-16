@@ -53,37 +53,7 @@
     z-index: 10;
     transform: translate3d(0, 0, -1px);
   }
-  
-  .card.charizard {
-    --color1: rgb(255, 148, 54);
-    --color2: rgb(255, 90, 144);
-  }
-  
-  
-  /* .card.blue {
-    --color1: #eb8bff;
-    --color2: #7eeefa;
-    background-image: url(https://supapongai.com/wp-content/uploads/2021/05/Blue-Eyes-Alternative-Fullart.jpg);
-  }
-  
-  .card.magic1 {
-    --color1: lightgreen;
-    --color2: #7eeefa;
-    background-image: url(https://i.pinimg.com/originals/e6/87/c9/e687c9b3dc0aeb62b6818663aa9df5db.png);
-  }
-  
-  .card.magic2 {
-    --color1: #eb8bff;
-    --color2: #7eeefa;
-    background-image: url(https://c1.scryfall.com/file/scryfall-cards/large/front/2/c/2c3d5102-c305-4461-8360-534aba0f5c02.jpg?1572373433);
-  }
-  
-  .card.magic3 {
-    --color1: lightgreen;
-    --color2: green;
-    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a2567f67-8f25-4b8d-b430-1aaa5ab0ed42/ddg91ue-0f172910-a2d3-4f4a-b5bd-bcd87add0126.png/v1/fill/w_680,h_950,strp/nissa__who_shakes_the_world_by_asapproxies_ddg91ue-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD05NTAiLCJwYXRoIjoiXC9mXC9hMjU2N2Y2Ny04ZjI1LTRiOGQtYjQzMC0xYWFhNWFiMGVkNDJcL2RkZzkxdWUtMGYxNzI5MTAtYTJkMy00ZjRhLWI1YmQtYmNkODdhZGQwMTI2LnBuZyIsIndpZHRoIjoiPD02ODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.hOlkTYYvNn6498FXCe_ouc8bHkdSG_56a9aeDFT1XBg);
-  }
-   */
+
   .card > span {
     position: relative;
     top: 45%;
