@@ -26,6 +26,7 @@ const displayCard = async (cardId) => {
     let data
 
     if (json['error']) {
+        data = []
         document.getElementById("cardImg").style.backgroundImage = "url('./images/notfound.jpg')";
     }
     else {
@@ -35,22 +36,24 @@ const displayCard = async (cardId) => {
     }
     
     // Holo Effect by Card Type
-    if (data['type'].toLowerCase().indexOf("spell") > -1) {
-        cardImg.style.setProperty('--color1', 'rgb(76, 230, 97)');
-        cardImg.style.setProperty('--color2', 'rgb(145, 240, 158)');
-    }
-    else if (data['type'].toLowerCase().indexOf("trap") > -1) {
-        cardImg.style.setProperty('--color1', 'rgb(199, 15, 107)');
-        cardImg.style.setProperty('--color2', 'rgb(255, 90, 144)');
-    }
-    else if (data['type'].toLowerCase().indexOf("normal") > -1) {
-        cardImg.style.setProperty('--color1', 'rgb(233, 165, 88)');
-        cardImg.style.setProperty('--color2', 'rgb(255, 212, 147)');
-    }
-    else {
-        cardImg.style.setProperty('--color1', 'rgb(0, 231, 255)');
-        cardImg.style.setProperty('--color2', 'rgb(255, 0, 231)');
-    }
+    if (typeof data['type'] !== 'undefined') {
+        if (data['type'].toLowerCase().indexOf("spell") > -1) {
+            cardImg.style.setProperty('--color1', 'rgb(76, 230, 97)');
+            cardImg.style.setProperty('--color2', 'rgb(145, 240, 158)');
+        }
+        else if (data['type'].toLowerCase().indexOf("trap") > -1) {
+            cardImg.style.setProperty('--color1', 'rgb(199, 15, 107)');
+            cardImg.style.setProperty('--color2', 'rgb(255, 90, 144)');
+        }
+        else if (data['type'].toLowerCase().indexOf("normal") > -1) {
+            cardImg.style.setProperty('--color1', 'rgb(233, 165, 88)');
+            cardImg.style.setProperty('--color2', 'rgb(255, 212, 147)');
+        }
+        else {
+            cardImg.style.setProperty('--color1', 'rgb(0, 231, 255)');
+            cardImg.style.setProperty('--color2', 'rgb(255, 0, 231)');
+        }
+    } 
 
     // Card Detail
     let boxRight = document.getElementsByClassName("boxRight")[0]
