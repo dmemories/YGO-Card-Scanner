@@ -23,10 +23,9 @@ const displayCard = async (cardId) => {
     let res = await fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php?id=" + cardId + "&misc=yes")
     let json = await res.json()
     let cardImg = document.getElementById("cardImg")
-    let data
+    let data = []
 
     if (json['error']) {
-        data = []
         document.getElementById("cardImg").style.backgroundImage = "url('./images/notfound.jpg')";
     }
     else {
@@ -72,7 +71,10 @@ const displayCard = async (cardId) => {
                 case 'set_code' :
                 case 'set_rarity' :
                 case 'set_price' :
-                    boxDetailRight.innerHTML = data['card_sets'][0][detail]
+                    if (data?.['card_sets'])
+                        boxDetailRight.innerHTML = data['card_sets'][0][detail]
+                    else
+                        boxDetailRight.innerHTML = "-"
                     break
     
                 default :
